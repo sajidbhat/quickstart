@@ -69,7 +69,7 @@ import {HeroService} from "./hero.service";
 })
 export class AppComponent implements OnInit {
   ngOnInit():void{
-    this.getHeroes();
+   this.getHeroes();
   }
   title = 'Tour of Heroes';
   heroes:Hero[];
@@ -81,8 +81,8 @@ export class AppComponent implements OnInit {
    
  }
 
-getHeroes():Hero[]{
-  return this.heroSerive.getHeroes();
+getHeroes():void{
+   this.heroSerive.getHeroes().then(heroes=>this.heroes=heroes);
 }
 
   onSelect(hero:Hero):void{
